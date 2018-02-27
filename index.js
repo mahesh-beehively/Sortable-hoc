@@ -24,7 +24,7 @@ const SortableItem = SortableElement(({height, value}) => (
 const SortableList = SortableContainer(({items}) => (
     <div style={{
         width: '80%',
-        height: '80vh',
+        
         maxWidth: '500px',
         margin: '0 auto',
         overflow: 'auto',
@@ -55,7 +55,9 @@ class Example extends Component {
     render() {
         const {items} = this.state;
 
-        return <SortableList items={items} onSortEnd={this.onSortEnd} />;
+        return <SortableList
+            useWindowAsScrollContainer
+            items={items} onSortEnd={this.onSortEnd} />;
     }
 }
 
